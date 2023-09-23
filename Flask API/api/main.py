@@ -1,3 +1,4 @@
+from scrapeNewsPages import scrapeNews
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 
@@ -18,6 +19,7 @@ class person(Resource):
 
 class FlutterNewsApp(Resource):
     def get(self):
+        scrapeNews()
         return 200
 
 api.add_resource(person,"/person")
